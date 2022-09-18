@@ -1,0 +1,32 @@
+{
+    "name": "JAX",
+    "image": "jax",
+    //"image": "nvcr.io/nvidia/tensorflow:22.03-tf2-py3",
+    "containerEnv": {
+        "DISPLAY": "localEnv:${DISPLAY}"
+    },
+    "runArgs": [
+        "--gpus=all",
+        "-it",
+        "--rm",
+        //"--ipc=host",
+        "-e",
+        "DISPLAY=${env:DISPLAY}",
+        "-e",
+        "XLA_PYTHON_CLIENT_MEM_FRACTION=0.7",
+        "-v",
+        "/tmp/.X11-unix:/tmp/.X11-unix",
+        "--device",
+        "/dev/video0",
+        "--device",
+        "/dev/video1"
+    ],
+    "extensions": [
+        "ms-python.python",
+        "oderwat.indent-rainbow"
+    ],
+    "forwardPorts": [
+        8888
+    ],
+    "postStartCommand": "pip install imageio[ffmpeg]"
+}
