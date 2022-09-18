@@ -1,7 +1,7 @@
 {
     "name": "JAX",
-    "image": "jax",
-    //"image": "nvcr.io/nvidia/tensorflow:22.03-tf2-py3",
+    //"image": "jax",
+    "image": "nvcr.io/nvidia/pytorch:latest",
     "containerEnv": {
         "DISPLAY": "localEnv:${DISPLAY}"
     },
