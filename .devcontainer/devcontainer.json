@@ -9,7 +9,7 @@
         "--gpus=all",
         "-it",
         "--rm",
-        //"--ipc=host",
+        "--ipc=host",
         "-e",
         "DISPLAY=${env:DISPLAY}",
         "-e",
@@ -28,5 +28,5 @@
     "forwardPorts": [
         8888
     ],
-    "postStartCommand": "pip install imageio[ffmpeg]"
+    "postStartCommand": "pip install jax[cuda] -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html imageio[ffmpeg]"
 }
